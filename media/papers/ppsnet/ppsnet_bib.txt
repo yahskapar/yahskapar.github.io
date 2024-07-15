@@ -1,0 +1,6 @@
+@article{paruchuri2024leveraging,
+  title={Leveraging Near-Field Lighting for Monocular Depth Estimation from Endoscopy Videos},
+  author={Paruchuri, Akshay and Ehrenstein, Samuel and Wang, Shuxian and Fried, Inbar and Pizer, Stephen M and Niethammer, Marc and Sengupta, Roni},
+  journal={arXiv preprint arXiv:2403.17915},
+  year={2024}
+}

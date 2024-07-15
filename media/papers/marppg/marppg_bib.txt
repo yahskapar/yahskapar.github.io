@@ -1,0 +1,7 @@
+@inproceedings{paruchuri2024motion,
+      title={Motion Matters: Neural Motion Transfer for Better Camera Physiological Measurement},
+      author={Paruchuri, Akshay and Liu, Xin and Pan, Yulu and Patel, Shwetak and McDuff, Daniel and Sengupta, Soumyadip},
+      booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
+      pages={5933--5942},
+      year={2024}
+    }
