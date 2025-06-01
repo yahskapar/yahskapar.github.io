@@ -1,0 +1,8 @@
+@inproceedings{angelopoulos2022drone,
+  title={Drone brush: Mixed reality drone path planning},
+  author={Angelopoulos, Angelos and Hale, Austin and Shaik, Husam and Paruchuri, Akshay and Liu, Ken and Tuggle, Randal and Szafir, Daniel},
+  booktitle={2022 17th ACM/IEEE International Conference on Human-Robot Interaction (HRI)},
+  pages={678--682},
+  year={2022},
+  organization={IEEE}
+}
