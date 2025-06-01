@@ -1,0 +1,8 @@
+@inproceedings{wang2024structure,
+  title={Structure-Preserving Image Translation for Depth Estimation in Colonoscopy},
+  author={Wang, Shuxian and Paruchuri, Akshay and Zhang, Zhaoxi and McGill, Sarah and Sengupta, Roni},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={667--677},
+  year={2024},
+  organization={Springer}
+}

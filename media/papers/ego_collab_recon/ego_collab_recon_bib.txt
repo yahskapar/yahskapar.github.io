@@ -1,0 +1,8 @@
+@inproceedings{zhang2023reconstruction,
+  title={Reconstruction of Human Body Pose and Appearance Using Body-Worn IMUs and a Nearby Camera View for Collaborative Egocentric Telepresence},
+  author={Zhang, Qian and Paruchuri, Akshay and Cha, YoungWoon and Huang, Jiabin and Kandel, Jade and Jiang, Howard and Ilie, Adrian and State, Andrei and Szafir, Danielle Albers and Szafir, Daniel and others},
+  booktitle={2023 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)},
+  pages={96--97},
+  year={2023},
+  organization={IEEE}
+}
