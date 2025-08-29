@@ -1,0 +1,6 @@
+@article{heydari2025anatomy,
+      title={Transforming Wearable Data into Health Insights using Large Language Model Agents}, 
+      author={A. Ali Heydari and Ken Gu and Vidya Srinivas and Hong Yu and Zhihan Zhang and Yuwei Zhang and Akshay Paruchuri and Qian He and Hamid Palangi and Nova Hammerquist and Ahmed A. Metwally and Brent Winslow and Yubin Kim and Kumar Ayush and Yuzhe Yang and Girish Narayanswamy and Maxwell A. Xu and Jake Garrison and Amy Aremnto Lee and Jenny Vafeiadou and Ben Graef and Isaac R. Galatzer-Levy and Erik Schenck and Andrew Barakat and Javier Perez and Jacqueline Shreibati and John Hernandez and Anthony Z. Faranesh and Javier L. Prieto and Connor Heneghan and Yun Liu and Jiening Zhan and Mark Malhotra and Shwetak Patel and Tim Althoff and Xin Liu and Daniel McDuff and Xuhai "Orson" Xu},
+      journal={arXiv preprint arXiv:2508.20148},
+      year={2025}
+}
