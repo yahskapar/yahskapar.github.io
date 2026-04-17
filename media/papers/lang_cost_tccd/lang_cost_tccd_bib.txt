@@ -1,0 +1,9 @@
+@misc{paruchuri2026costlanguagecentroiderasure,
+      title={The Cost of Language: Centroid Erasure Exposes and Exploits Modal Competition in Multimodal Language Models}, 
+      author={Akshay Paruchuri and Ishan Chatterjee and Henry Fuchs and Ehsan Adeli and Piotr Didyk},
+      year={2026},
+      eprint={2604.14363},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2604.14363}, 
+}
