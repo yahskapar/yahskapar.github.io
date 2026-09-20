@@ -1,766 +1,490 @@
 <!doctype html>
 <html lang="en">
 
-   
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
-
-  <head>
-	<meta name="generator" content="Hugo 0.113.0">
-    
+<head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Icons: Academicons + Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.1/css/academicons.min.css" rel="stylesheet"
+        integrity="sha384-FIue+PI4SsI9XfHCz8dBLg33b0c1fMJgNU3X//L26FYbGnlSEfWmNT7zgWc2N9b6" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+    <link href="css/style.css" rel="stylesheet">
+    <title>Akshay Paruchuri</title>
+    <script>
+        // Check for saved theme preference
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            // Sun while dark, moon while light (the button may not exist yet on first call)
+            const icon = document.querySelector('.theme-toggle i');
+            if (icon) icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
 
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500&family=Alegreya+SC&family=Lora:wght@400&display=swap" rel="stylesheet">
+        // Initialize theme: saved choice first, otherwise follow the system setting
+        function initTheme() {
+            let savedTheme = null;
+            try { savedTheme = localStorage.getItem('theme'); } catch (e) { }
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+        }
 
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        // Toggle theme (only an explicit click is remembered)
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+            try { localStorage.setItem('theme', newTheme); } catch (e) { }
+        }
 
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        // Apply before first paint so a dark theme doesn't flash light, then again once the toggle icon exists
+        initTheme();
+        document.addEventListener('DOMContentLoaded', initTheme);
+    </script>
+</head>
 
-    <link rel="stylesheet" href="/css/style.css">
-  </head>
-
-  <body>
-
-    <div class="container">
-        <div class="row">
-          <div class="col-xl-1"></div>
-          <div class="col col-xl-10">
-            <div class="row mb-3">
-  <div class="col d-none d-md-block">
-    <div class="d-flex justify-content-end flex-wrap">
-    <a href="https://akshayparuchuri.com/" class="btn link-button" role="button">About</a>
-    <a href="https://akshayparuchuri.com/#research" class="btn link-button" role="button">Research</a>
-    <a href="https://akshayparuchuri.com/#software" class="btn link-button" role="button">Software</a>
-    <a href="/media/Akshay_Paruchuri_CV_Last_Updated_May_2026.pdf" target="_blank" class="btn link-button" role="button">CV</a>
+<body>
+    <div class="theme-toggle-container">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
     </div>
-  </div>
-  <div class="col d-md-none">
-    <div class="d-flex justify-content-end flex-wrap">
-    <a href="https://akshayparuchuri.com/" class="btn link-button-small" role="button">About</a>
-    <a href="https://akshayparuchuri.com/#research" class="btn link-button-small" role="button">Research</a>
-    <a href="https://akshayparuchuri.com/#software" class="btn link-button-small" role="button">Software</a>
-    <a href="/media/Akshay_Paruchuri_CV_Last_Updated_May_2026.pdf" target="_blank" class="btn link-button-small" role="button">CV</a>
-    </div>
-  </div>
-</div> 
-
-
-            <div class="row pt-1 m-1">
-              
-<div class="container" text-align="center">
-
-  <div class="row info-text">
-    <div class="col-sm-4">
-      <div class="text-center">
-
-        <div class="d-block d-sm-none">
-        <img src="headshot.jpg" class="img-fluid rounded-circle center-block about-headshot-mobile" alt="headshot">
-        </div>
-        <div class="d-none d-sm-block">
-        <img src="headshot.jpg" class="img-fluid rounded-circle center-block about-headshot" alt="headshot">
-        </div>
-        <p class="h3 pt-sm-3 title-name">Akshay Paruchuri</p>
-
-        <div class="d-block d-lg-none">
-        <p class="mb-1 title-email-small"><a href="mailto:akshaypa@stanford.edu">akshaypa@stanford.edu</a></p>
-        </div>
-        <div class="d-none d-lg-block">
-        <p class="mb-1 title-email"><a href="mailto:akshaypa@stanford.edu">akshaypa@stanford.edu</a></p>
-        </div>
-
-        <a href="https://github.com/yahskapar" class="fa fa-github"></a>
-        <a href="https://scholar.google.com/citations?hl=en&user=tc0M7WwAAAAJ&view_op=list_works&sortby=pubdate" class="fa fa-graduation-cap"></a>
-        <a href="https://www.linkedin.com/in/akshayparuchuri/" class="fa fa-linkedin"></a>
-        <a href="https://twitter.com/Yahskapar" class="fa fa-twitter"></a>
-        <div class="d-block d-sm-none">
-          <br>
-        </div>
-
-      </div>
-    </div>
-    <div class="col-sm-8 about-text">
-      <p>I'm currently a postdoctoral scholar at Stanford University, advised by Professor <a href="https://stanford.edu/~eadeli/">Ehsan Adeli</a>. I'm affiliated with the <a href="https://stai.stanford.edu/">Stanford Translational AI (STAI) Lab</a> and the <a href="https://svl.stanford.edu/">Stanford Vision and Learning (SVL) Lab</a>. I earned my PhD in computer science at <a href="https://cs.unc.edu/">UNC Chapel Hill</a> under the advisement of Professor <a href="https://telepresence.web.unc.edu/">Henry Fuchs</a>. I build and evaluate multimodal AI systems, from general-purpose methods for interactive computing to applications in healthcare. Currently, I'm working toward a future where multimodal AI can safely and reliably integrate into healthcare systems in order to improve the entire patient journey, from advanced diagnostic imaging and surgical support to all-day health monitoring and management, with the aim to achieve better therapeutic outcomes for cancer and aging-related diseases. I'm generally interested in opportunities that would allow me to continue to deepen my research expertise while leading and working on projects that benefit people everywhere, whether through foundational research, real-world products, or shaping how these systems are evaluated and deployed.</p>
-
-      <p>Previously, I was a visiting researcher at <a href="https://www.idsia.usi-supsi.ch/">IDSIA USI-SUPSI</a> working with Professor <a href="https://www.pdf.inf.usi.ch/people/piotr/">Piotr Didyk</a> on the interpretability of multimodal language models (MLMs) with respect to capabilities such as visual perception. I've published in leading venues on topics such as remote health sensing (WACV, NeurIPS), 3D reconstruction (ECCV, MICCAI), LLM-based conversational agents for personal health (EMNLP, Nature Communications), and energy-efficient operation of smart glasses (ISMAR). I've done internships at <a href="https://arvr.google.com/">Google AR/VR</a>, <a href="https://research.google/blog/advancing-personal-health-and-wellness-insights-with-ai/">Google Consumer Health Research</a>, and <a href="https://www.kitware.com/">Kitware</a>.
-      </p>
-
-      <!-- <p>
-        <strong>I'm actively seeking...</strong>
-      </p> -->
-
-      <span class="news-title">News</span> 
-      <div class="expandable-list">
-        <ul>
-
-            <li><span class="news-date">Apr 2026</span> <span class="news-entry">I'm starting as a part-time Visiting Faculty Researcher at <a href="https://arvr.google.com/">Google XR</a> in early April. Looking forward to working with <a href="https://research.google/people/ishanchatterjee/">Ishan Chatterjee</a>, <a href="https://xueqiuyue.com/">Qiuyue (Shirley) Yue</a>, and others at Google working on AI interfaces of the future!</span> </li>
-
-            <li><span class="news-date">Nov 2025</span> <span class="news-entry">I'm excited to present our <a href="https://arxiv.org/abs/2506.21532">HealthChat paper</a> as an oral presentation at <a href="https://ahli.cc/ml4h/">ML4H</a> in San Diego!</span> </li>
-
-            <li><span class="news-date">Oct 2025</span> <span class="news-entry">I successfully defended my thesis and submitted my dissertation! I plan on starting a postdoc in <a href="https://stai.stanford.edu/">Ehsan Adeli's STAI Lab</a> in January 2026.</span> </li>
-          
-        </ul>
-      
-        <span class="news-expand-button news-entry" id="newsExpandBtn">...show all...</span>
-
-      </div>
-
-  
-    </div>
-  </div>
-
-  <br>
-  
-  <a name="research"></a> 
-  <div class="row content-header">
-    <div class="col pr-0">
-    <p>Research</p>
-    </div>
-  </div>
-
-<br>
-<p>Please see my <a href="https://scholar.google.com/citations?hl=en&user=tc0M7WwAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a> for a full, more up-to-date list of my publications.</p>
-
-<div class="row content-summary pt-4 pb-2">
-
-  <div class="d-none d-sm-block col-sm-3  m-0 p-0">
-    
-    <img src=/media/papers/lang_cost_tccd/lang_cost_tccd_teaser.png class="img-fluid summary-image drop-shadow" alt="teaser img">
-    
-  </div>
-  
-  <div class="col-xs col-sm-9">
-    <p class="summary-title">The Cost of Language: Centroid Erasure Exposes and Exploits Modal Competition in Multimodal Language Models</p>
-    <p class="summary-authors">Akshay Paruchuri, Ishan Chatterjee, Henry Fuchs, Ehsan Adeli, Piotr Didyk</p>
-    <p class="summary-publication-status"> 
-      arXiv 2026
-    </p>
-    
-    <p class="summary-text">Multimodal language models underperform on visual tasks, but why remains unclear. We propose centroid replacement—collapsing each token to its nearest K-means centroid—as a probe for modal dependence. Across seven models, erasing text centroids costs 4× more accuracy than erasing visual ones, reinforcing a universal imbalance where language overshadows vision. We exploit this via text centroid contrastive decoding, recovering up to +16.9% accuracy without retraining. Modal competition is structurally localized, correctable at inference, and quantifiable as a diagnostic signal for future multimodal training.</p>
-    
-    <div class="d-flex flex-row flex-wrap">
-    
-      <div>
-      
-        <a href="https://arxiv.org/abs/2604.14363" class="btn-sm badge-button" role="button">arxiv</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="/media/papers/lang_cost_tccd/lang_cost_tccd_bib.txt"  target="_blank" class="btn-sm badge-button" role="button">bibtex</a>
-      
-      </div>
-    
-    </div>
-  </div>
-
-</div>
-
-<div class="row content-summary pt-4 pb-2">
-
-  <div class="d-none d-sm-block col-sm-3  m-0 p-0">
-    
-    <img src="/media/papers/phiat/phiat_teaser.png" class="img-fluid summary-image drop-shadow" alt="teaser img">
-    
-  </div>
-  
-  <div class="col-xs col-sm-9">
-    <p class="summary-title">The Anatomy of a Personal Health Agent</p>
-    <p class="summary-authors">A. Ali Heydari<sup>*</sup>, Ken Gu<sup>*</sup>, Vidya Srinivas<sup>*</sup>, Hong Yu<sup>*</sup>, Zhihan Zhang, Yuwei Zhang, <b>Akshay Paruchuri</b>, Qian He, Hamid Palangi, Nova Hammerquist, Ahmed A. Metwally, Brent Winslow, Yubin Kim, Kumar Ayush, Yuzhe Yang, Girish Narayanswamy, Maxwell A. Xu, Jake Garrison, Amy Aremnto Lee, Jenny Vafeiadou, Ben Graef, Isaac R. Galatzer-Levy, Erik Schenck, Andrew Barakat, Javier Perez, Jacqueline Shreibati, John Hernandez, Anthony Z. Faranesh, Javier L. Prieto, Connor Heneghan, Yun Liu, Jiening Zhan, Mark Malhotra, Shwetak Patel, Tim Althoff, Xin Liu<sup>†</sup>, Daniel McDuff<sup>†</sup>, Xuhai "Orson" Xu<sup>†</sup></p>
-    <p class="summary-publication-status"> 
-      arXiv 2025
-    </p>
-    
-    <p class="summary-text">To provide personalized health guidance in daily life, we developed the Personal Health Agent (PHA), a multi-agent framework that reasons over data from consumer wearables and personal health records. Grounded in a user-centered analysis of real-world needs, PHA integrates three specialist agents—a data scientist, a health expert, and a health coach—to deliver tailored insights and guidance. An extensive evaluation across 10 benchmark tasks, involving over 7,000 expert and user annotations, validates the framework and establishes a strong foundation for future personal health applications.</p>
-    
-    <div class="d-flex flex-row flex-wrap">
-    
-      <div>
-      
-        <a href="https://www.arxiv.org/abs/2508.20148" class="btn-sm badge-button" role="button">arxiv</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="https://research.google/blog/how-we-are-building-the-personal-health-coach/" class="btn-sm badge-button" role="button">blog post</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="/media/papers/phiat/phiat_bib.txt"  target="_blank" class="btn-sm badge-button" role="button">bibtex</a>
-      
-      </div>
-    
-    </div>
-  </div>
-
-</div>
-
-<div class="row content-summary pt-4 pb-2">
-
-  <div class="d-none d-sm-block col-sm-3  m-0 p-0">
-    
-    <img src=/media/papers/healthchat/healthchat_teaser.png class="img-fluid summary-image drop-shadow" alt="teaser img">
-    
-  </div>
-  
-  <div class="col-xs col-sm-9">
-    <p class="summary-title">"What's Up, Doc?": Analyzing How Users Seek Health Information in Large-Scale Conversational AI Datasets</p>
-    <p class="summary-authors">Akshay Paruchuri, Maryam Aziz, Rohit Vartak, Ayman Ali, Best Uchehara, Xin Liu, Ishan Chatterjee, Monica Agrawal</p>
-    <p class="summary-publication-status"> 
-      EMNLP 2025 (Findings)
-    </p>
-    
-    <p class="summary-text">In order to better understand how people use LLMs when seeking health information, we created HealthChat-11K, a dataset of 11,000 real-world conversations. Subsequent annotation and analysis of user interactions across 21 health specialties reveals common user interactions and enables informative case studies on incomplete context, affective behaviors, and leading questiions. Our findings highlight significant risks when seeking health information with LLMs and underscore the need to improve how conversational AI supports healthcare inquiries.</p>
-    
-    <div class="d-flex flex-row flex-wrap">
-    
-      <div>
-      
-        <a href="https://arxiv.org/abs/2506.21532" class="btn-sm badge-button" role="button">arxiv</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="https://huggingface.co/datasets/yahskapar/HealthChat-11K" class="btn-sm badge-button" role="button">dataset</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="https://github.com/yahskapar/HealthChat" class="btn-sm badge-button" role="button">code</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="/media/papers/healthchat/healthchat_bib.txt"  target="_blank" class="btn-sm badge-button" role="button">bibtex</a>
-      
-      </div>
-    
-    </div>
-  </div>
-
-</div>
-
-<div class="row content-summary pt-4 pb-2">
-
-  <div class="d-none d-sm-block col-sm-3  m-0 p-0">
-    
-    <img src=/media/papers/radar/radar_teaser.png class="img-fluid summary-image drop-shadow" alt="teaser img">
-    
-  </div>
-  
-  <div class="col-xs col-sm-9">
-    <p class="summary-title">RADAR: Benchmarking Language Models on Imperfect Tabular Data</p>
-    <p class="summary-authors">Ken Gu, Zhihan Zhang, Kate Lin, Yuwei Zhang, Akshay Paruchuri, Hong Yu, Mehran Kazemi, Kumar Ayush, A. Ali Heydari, Maxwell A. Xu, Yun Liu, Ming-Zher Poh, Yuzhe Yang, Mark Malhotra, Shwetak Patel, Hamid Palangi, Xuhai Xu, Daniel McDuff, Tim Althoff, Xin Liu</p>
-    <p class="summary-publication-status"> 
-      NeurIPS 2025
-    </p>
-    
-    <p class="summary-text">To address language models' poor handling of data artifacts, the RADAR benchmark was created to evaluate data awareness on tabular data. Using 2,980 table-query pairs grounded in real-world data spanning 9 domains and 5 data artifact types, RADAR finds that model performance drops significantly when artifacts like missing values are introduced. This reveals a critical gap in their ability to perform robust, real-world data analysis.</p>
-    
-    <div class="d-flex flex-row flex-wrap">
-    
-      <div>
-      
-        <a href="https://arxiv.org/abs/2506.08249" class="btn-sm badge-button" role="button">arxiv</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="https://huggingface.co/datasets/kenqgu/RADAR" class="btn-sm badge-button" role="button">dataset</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="https://github.com/kenqgu/RADAR" class="btn-sm badge-button" role="button">code</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="/media/papers/radar/radar_bib.txt"  target="_blank" class="btn-sm badge-button" role="button">bibtex</a>
-      
-      </div>
-    
-    </div>
-  </div>
-
-</div>
-
-<div class="row content-summary pt-4 pb-2">
-
-  <div class="d-none d-sm-block col-sm-3  m-0 p-0">
-    
-    <img src=/media/papers/egotrigger/egotrigger_teaser.png class="img-fluid summary-image drop-shadow" alt="teaser img">
-    
-  </div>
-  
-  <div class="col-xs col-sm-9">
-    <p class="summary-title">EgoTrigger: Toward Audio-Driven Image Capture for Human Memory Enhancement in All-Day Energy-Efficient Smart Glasses</p>
-    <p class="summary-authors">Akshay Paruchuri, Sinan Hersek, Lavisha Aggarwal, Qiao Yang, Xin Liu, Achin Kulshrestha, Andrea Colaco, Henry Fuchs, Ishan Chatterjee</p>
-    <p class="summary-publication-status"> 
-      ISMAR 2025 (TVCG Journal Paper)
-    </p>
-    
-    <p class="summary-text">EgoTrigger uses a lightweight audio classification model and a custom classification head to trigger image capture from hand-object interaction (HOI) audio cues, such as the sound of a medication bottle being opened. Our approach is capable of using 54% fewer frames on average while maintaining or exceeding performance on an episodic memory task, signifying potential for energy-efficient usage as a part of all-day smart glasses capable of human memory enhancement.</p>
-    
-    <div class="d-flex flex-row flex-wrap">
-
-      <div>
-      
-        <a href="https://egotrigger.github.io/" class="btn-sm badge-button" role="button">project</a>
-      
-      </div>
-    
-      <div>
-      
-        <a href="https://arxiv.org/abs/2508.01915" class="btn-sm badge-button" role="button">arxiv</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="https://github.com/yahskapar/EgoTrigger" class="btn-sm badge-button" role="button">code</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="/media/papers/egotrigger/egotrigger_bib.txt"  target="_blank" class="btn-sm badge-button" role="button">bibtex</a>
-      
-      </div>
-    
-    </div>
-  </div>
-
-</div>
-
-<div class="row content-summary pt-4 pb-2">
-  
-  <div class="d-none d-sm-block col-sm-3  m-0 p-0">
-    
-    <img src=/media/papers/prob_reasoning_in_LLMs/prob_reasoning_in_LLMs.png class="img-fluid summary-image drop-shadow" alt="teaser img">
-    
-  </div>
-  
-  <div class="col-xs col-sm-9">
-    <p class="summary-title">What Are the Odds? Language Models Are Capable of Probabilistic Reasoning</p>
-    <p class="summary-authors">Akshay Paruchuri, Jake Garrison, Shun Liao, John Hernandez, Jacob Sunshine, Tim Althoff, Xin Liu, Daniel McDuff</p>
-    <p class="summary-publication-status"> 
-      EMNLP 2024 (Main)
-    </p>
-    
-    <p class="summary-text">Language models were evaluated on probabilistic reasoning tasks such as estimating percentiles and calculating probabilities using idealized and real-world distributions. Techniques including within-distribution anchoring and simplifying assumptions significantly improved LLM performance by up to 70%.</p>
-    
-    <div class="d-flex flex-row flex-wrap">
-    
-      <div>
-      
-        <a href="https://arxiv.org/pdf/2406.12830" class="btn-sm badge-button" role="button">arxiv</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="https://github.com/yahskapar/LLMs-and-Probabilistic-Reasoning" class="btn-sm badge-button" role="button">code</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="https://research.google/blog/evaluating-and-enhancing-probabilistic-reasoning-in-language-models/" class="btn-sm badge-button" role="button">blog post</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="/media/papers/prob_reasoning_in_LLMs/prob_reasoning_in_LLMs_bib.txt"  target="_blank" class="btn-sm badge-button" role="button">bibtex</a>
-      
-      </div>
-    
-    </div>
-  </div>
-
-</div>
-
-<div class="row content-summary pt-4 pb-2">
-
-  <div class="d-none d-sm-block col-sm-3  m-0 p-0">
-    
-    <img src=/media/papers/phia/phia_teaser.png class="img-fluid summary-image drop-shadow" alt="teaser img">
-    
-  </div>
-  
-  <div class="col-xs col-sm-9">
-    <p class="summary-title">Transforming Wearable Data into Health Insights using Large Language Model Agents</p>
-    <p class="summary-authors">Akshay Paruchuri<sup>*</sup>, Mike A. Merrill<sup>*</sup>, Naghmeh Rezaei, Geza Kovacs, Javier Perez, Yun Liu, Erik Schenck, Nova Hammerquist, Jake Sunshine, Shyam Tailor, Kumar Ayush, Hao-Wei Su, Qian He, Cory Y. McLean, Mark Malhotra, Shwetak Patel, Jiening Zhan, Tim Althoff, Daniel McDuff, Xin Liu</p>
-    <p class="summary-publication-status"> 
-      Nature Communications 2026 
-    </p>
-    
-    <p class="summary-text">The Personal Health Insights Agent (PHIA) leverages large language models with code generation and information retrieval tools to enable personalized insights from wearable health data, an ongoing challenge. Evaluated on over 4000 questions, PHIA accurately answers over 84% of factual numerical and 83% of open-ended health questions, paving the way for accessible, data-driven personalized wellness.</p>
-    
-    <div class="d-flex flex-row flex-wrap">
-    
-      <div>
-      
-        <a href="https://arxiv.org/abs/2406.06464" class="btn-sm badge-button" role="button">arxiv</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="https://www.nature.com/articles/s41467-025-67922-y" class="btn-sm badge-button" role="button">nature</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="https://github.com/yahskapar/personal-health-insights-agent" class="btn-sm badge-button" role="button">code</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="https://research.google/blog/advancing-personal-health-and-wellness-insights-with-ai/" class="btn-sm badge-button" role="button">blog post</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="/media/papers/phia/phia_bib.txt"  target="_blank" class="btn-sm badge-button" role="button">bibtex</a>
-      
-      </div>
-    
-    </div>
-  </div>
-
-</div>
-
-<div class="row content-summary pt-4 pb-2">
-
-  <div class="d-none d-sm-block col-sm-3  m-0 p-0">
-    
-    <img src=/media/papers/colon_image_translation/colon_image_translation_teaser.png class="img-fluid summary-image drop-shadow" alt="teaser img">
-    
-  </div>
-  
-  <div class="col-xs col-sm-9">
-    <p class="summary-title">Structure-preserving Image Translation for Depth Estimation in Colonoscopy Video</p>
-    <p class="summary-authors">Shuxian Wang, Akshay Paruchuri, Zhaoxi Zhang, Sarah McGill, Roni Sengupta</p>
-    <p class="summary-publication-status"> 
-      MICCAI 2024 (Oral)
-    </p>
-    
-    <p class="summary-text">To address the domain gap in colonoscopy depth estimation, a structure-preserving synthetic-to-real image translation pipeline generates realistic synthetic images that retain depth geometry. This approach, aided by a new clinical dataset, improves supervised depth estimation and generalization to real-world clinical data.</p>
-    
-    <div class="d-flex flex-row flex-wrap">
-    
-      <div>
-      
-        <a href="https://arxiv.org/abs/2408.10153" class="btn-sm badge-button" role="button">arxiv</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="/media/papers/colon_image_translation/colon_image_translation_bib.txt"  target="_blank" class="btn-sm badge-button" role="button">bibtex</a>
-      
-      </div>
-    
-    </div>
-  </div>
-
-</div>
-
-<div class="row content-summary pt-4 pb-2">
-
-  <div class="d-none d-sm-block col-sm-3  m-0 p-0">
-    
-    <img src=/media/papers/ppsnet/ppsnet_teaser.png class="img-fluid summary-image drop-shadow" alt="teaser img">
-    
-  </div>
-  
-  <div class="col-xs col-sm-9">
-    <p class="summary-title">Leveraging Near-Field Lighting for Monocular Depth Estimation from Endoscopy Videos</p>
-    <p class="summary-authors">Akshay Paruchuri, Samuel Ehrenstein, Shuxian Wang, Inbar Fried, Stephen M. Pizer, Marc Niethammer, Roni Sengupta</p>
-    <p class="summary-publication-status"> 
-      ECCV 2024
-    </p>
-    
-    <p class="summary-text">Near-field lighting in endoscopes is modeled as Per-Pixel Shading (PPS) to achieve state-of-the-art depth refinement on colonoscopy data. This is accomplished using PPS features with teacher-student transfer learning and PPS-informed self-supervision.</p>
-    
-    <div class="d-flex flex-row flex-wrap">
-    
-      <div>
-      
-        <a href="https://ppsnet.github.io/" class="btn-sm badge-button" role="button">project</a>
-      
-      </div>
-    
-      <div>
-      
-        <a href="https://arxiv.org/abs/2403.17915" class="btn-sm badge-button" role="button">arxiv</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="https://github.com/yahskapar/PPSNet" class="btn-sm badge-button" role="button">code</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="/media/papers/ppsnet/ppsnet_bib.txt"  target="_blank" class="btn-sm badge-button" role="button">bibtex</a>
-      
-      </div>
-    
-    </div>
-  </div>
-
-</div>
-
-<div class="row content-summary pt-4 pb-2">
-
-  <div class="d-none d-sm-block col-sm-3  m-0 p-0">
-    
-    <img src=/media/papers/marppg/marppg_teaser.png class="img-fluid summary-image drop-shadow" alt="teaser img">
-    
-  </div>
-  
-  <div class="col-xs col-sm-9">
-    <p class="summary-title">Motion Matters: Neural Motion Transfer for Better Camera Physiological Measurement</p>
-    <p class="summary-authors">Akshay Paruchuri, Xin Liu, Yulu Pan, Shwetak Patel, Daniel McDuff, Roni Sengupta</p>
-    <p class="summary-publication-status"> 
-      WACV 2024 (Oral)
-    </p>
-    
-    <p class="summary-text">Neural Motion Transfer is presented as an effective data augmentation technique for estimating PPG signals from facial videos. This approach significantly improved inter-dataset testing results by up to 79% and outperformed existing state-of-the-art methods on the PURE dataset by 47%.</p>
-    
-    <div class="d-flex flex-row flex-wrap">
-    
-      <div>
-      
-        <a href="https://motion-matters.github.io/" class="btn-sm badge-button" role="button">project</a>
-      
-      </div>
-    
-      <div>
-      
-        <a href="https://arxiv.org/abs/2303.12059" class="btn-sm badge-button" role="button">arxiv</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="https://github.com/yahskapar/MA-rPPG-Video-Toolbox" class="btn-sm badge-button" role="button">code</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="/media/papers/marppg/marppg_bib.txt"  target="_blank" class="btn-sm badge-button" role="button">bibtex</a>
-      
-      </div>
-    
-    </div>
-  </div>
-
-</div>
-
-<div class="row content-summary pt-4 pb-2">
-
-  <div class="d-none d-sm-block col-sm-3  m-0 p-0">
-    
-    <img src=/media/papers/ego_collab_recon/ego_collab_recon_teaser.png class="img-fluid summary-image drop-shadow" alt="teaser img">
-    
-  </div>
-  
-  <div class="col-xs col-sm-9">
-    <p class="summary-title">Reconstruction of Human Body Pose and Appearance Using Body-Worn IMUs and a Nearby Camera View for Collaborative Egocentric Telepresence</p>
-    <p class="summary-authors">Qian Zhang, Akshay Paruchuri, Young-Woon Cha, Jia-Bin Huang, Jade Kandel, Howard Jiang, Adrian Ilie, Andrei State, Danielle Szafir, Daniel Szafir, Henry Fuchs</p>
-    <p class="summary-publication-status"> 
-      IEEE VR 2023 (ReDigiTS Workshop)
-    </p>
-    
-    <p class="summary-text">A collaborative 3D reconstruction method estimates a target person's body pose using worn IMUs and reconstructs their appearance via an external AR headset view from another nearby person. This approach aims to enable future anytime, anywhere telepresence through daily worn accessories.</p>
-    
-    <div class="d-flex flex-row flex-wrap">
-    
-      <div>
-      
-        <a href="/media/papers/ego_collab_recon/zhang2023reconstruction.pdf"  target="_blank" class="btn-sm badge-button" role="button">PDF</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="/media/papers/ego_collab_recon/ego_collab_recon_bib.txt"  target="_blank" class="btn-sm badge-button" role="button">bibtex</a>
-      
-      </div>
-    
-    </div>
-  </div>
-
-</div>
-
-<div class="row content-summary pt-4 pb-2">
-
-  <div class="d-none d-sm-block col-sm-3  m-0 p-0">
-    
-    <img src=/media/papers/drone_brush/drone_brush_teaser.jpg class="img-fluid summary-image drop-shadow" alt="teaser img">
-    
-  </div>
-  
-  <div class="col-xs col-sm-9">
-    <p class="summary-title">Drone Brush: Mixed Reality Drone Path Planning</p>
-    <p class="summary-authors">Angelos Angelopoulos, Austin Hale, Husam Shaik, Akshay Paruchuri, Ken Liu, Randal Tuggle, Daniel Szafir</p>
-    <p class="summary-publication-status"> 
-      HRI 2022
-    </p>
-    
-    <p class="summary-text">Drone Brush introduces a mixed reality interface using HoloLens 2 for intuitive 3D drone path planning with hand gestures, featuring collision checking via spatial maps and path simplification.</p>
-    
-    <div class="d-flex flex-row flex-wrap">
-    
-      <div>
-      
-        <a href="/media/papers/drone_brush/2022angelopoulosdrone.pdf"  target="_blank" class="btn-sm badge-button" role="button">PDF</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="/media/papers/drone_brush/drone_brush_bib.txt"  target="_blank" class="btn-sm badge-button" role="button">bibtex</a>
-      
-      </div>
-    
-    </div>
-  </div>
-
-</div>
-
-  <br>
-  <br>
-
-  <a name="software"></a> 
-  <div class="row content-header">
-    <div class="col pr-0">
-    <p>Software</p>
-    </div>
-  </div>
-  
-    
-<div class="row content-summary pt-4 pb-2">
-
-  <div class="d-none d-sm-block col-sm-3  m-0 p-0">
-    
-    <img src=media/software/rppg-toolbox/rppg_toolbox_teaser.png class="img-fluid summary-image drop-shadow" alt="teaser img">
-    
-  </div>
-  
-  <div class="col-xs col-sm-9">
-    <p class="summary-title">rPPG-Toolbox: Deep Remote PPG Toolbox</p>
-    <p class="summary-authors"></p>
-    <p class="summary-publication-status"> 
-      NeurIPS 2023
-      
-    </p>
-    
-    <p class="summary-text">A comprehensive toolbox that contains unsupervised and supervised remote photoplethysmography (rPPG) models with support for public benchmark datasets, data augmentation, and systematic evaluation.</p>
-    
-    <div class="d-flex flex-row flex-wrap">
-
-      <div>
-      
-        <a href="https://arxiv.org/abs/2210.00716" class="btn-sm badge-button" role="button">arXiv</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="https://github.com/ubicomplab/rPPG-Toolbox" class="btn-sm badge-button" role="button">code</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/d7d0d548a6317407e02230f15ce75817-Abstract-Datasets_and_Benchmarks.html" class="btn-sm badge-button" role="button">NeurIPS 2023</a>
-      
-      </div>
-
-      <div>
-      
-        <a href="/media/papers/texfusion/texfusion_bib.txt"  target="_blank" class="btn-sm badge-button" role="button">bibtex</a>
-      
-      </div>
-
-    </div>
-  </div>
-
-</div>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const newsExpandBtn = document.getElementById("newsExpandBtn");
-    const extraItems = document.querySelectorAll(".extra-item");
-    let isExpanded = false;
-
-    newsExpandBtn.addEventListener("click", function() {
-      if (isExpanded) {
-        extraItems.forEach(item => item.style.display = "none");
-      } else {
-        extraItems.forEach(item => item.style.display = "list-item");
-      }
-      isExpanded = !isExpanded;
-    });
-  });
-</script>
-
-
+    <div class="intro px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+        <h1 class="display-6 text-center name">Akshay Paruchuri</h1>
+        <div class="intro-body">
+            <div class="intro-photo">
+                <!-- A little evergreen: walks along the top of the photo, hops onto the text and back (see initTree) -->
+                <span class="critter" aria-hidden="true"><span class="critter-jump">
+                    <svg viewBox="0 0 24 30" xmlns="http://www.w3.org/2000/svg">
+                        <line class="critter-leg critter-leg-l" x1="10" y1="24.5" x2="10" y2="29.2"/>
+                        <line class="critter-leg critter-leg-r" x1="14" y1="24.5" x2="14" y2="29.2"/>
+                        <g class="critter-body">
+                            <path class="critter-foliage" d="M12 1.5 L18.5 10 H15.5 L21 18 H17.5 L22.5 25 H1.5 L6.5 18 H3 L8.5 10 H5.5 Z"/>
+                            <circle class="critter-eye" cx="9" cy="16.3" r="2.5"/>
+                            <circle class="critter-eye" cx="15" cy="16.3" r="2.5"/>
+                            <g class="critter-pupils">
+                                <circle cx="9" cy="16.6" r="1.15"/>
+                                <circle cx="15" cy="16.6" r="1.15"/>
+                            </g>
+                            <path class="critter-smile" d="M9.3 20.8 Q12 23.2 14.7 20.8"/>
+                        </g>
+                    </svg>
+                </span></span>
+                <img class="img-thumbnail" src="headshot.jpg" alt="Akshay Paruchuri">
             </div>
-          </div>
-          <div class="col-xl-1"></div>
+            <div class="intro-text">
+                <p>
+I'm a computer scientist by training. For most of my career so far, I've built and evaluated AI systems to improve health and well-being. I currently focus on multidisciplinary measurement of AI systems at the <a target="_blank" href="https://www.nist.gov/caisi">Center for AI Standards and Innovation (CAISI)</a> within the <a target="_blank" href="https://www.nist.gov/">National Institute of Standards and Technology (NIST)</a>, part of the <a target="_blank" href="https://www.commerce.gov/">US Department of Commerce</a>.
+</p>
+                <p>
+I'm also a postdoctoral scholar at Stanford University, primarily working with <a target="_blank" href="https://cs.stanford.edu/~sanmi/">Professor Sanmi Koyejo</a> and <a target="_blank" href="https://stanford.edu/~eadeli/">Professor Ehsan Adeli</a> on building and evaluating multimodal AI systems.
+</p>
+            </div>
+        </div>
+        <p class="social-icons">
+            <a target="_blank" href="mailto:akshaypa@stanford.edu" aria-label="Email"><i class="far fa-envelope"></i></a>
+            <a target="_blank" href="https://scholar.google.com/citations?hl=en&user=tc0M7WwAAAAJ&view_op=list_works&sortby=pubdate" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/akshayparuchuri/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a target="_blank" href="https://github.com/yahskapar" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a target="_blank" href="https://twitter.com/Yahskapar" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </p>
+    </div>
+
+    <script>
+        // Floating header (name + social icons) on mobile once the intro scrolls out of view
+        function initFloatingHeader() {
+            const introSection = document.querySelector('.intro');
+            const name = introSection.querySelector('h1').textContent;
+            const socialIcons = introSection.querySelector('.social-icons').innerHTML;
+            let introVisible = true;
+
+            function update() {
+                const floatingHeader = document.querySelector('.floating-header');
+                const shouldFloat = !introVisible && window.innerWidth <= 768;
+                if (shouldFloat && !floatingHeader) {
+                    const el = document.createElement('div');
+                    el.className = 'floating-header';
+                    el.innerHTML = `<h1>${name}</h1><div class="social-icons">${socialIcons}</div>`;
+                    document.body.appendChild(el);
+                    document.body.classList.add('floating-header-active');
+                } else if (!shouldFloat && floatingHeader) {
+                    floatingHeader.remove();
+                    document.body.classList.remove('floating-header-active');
+                }
+            }
+
+            new IntersectionObserver((entries) => {
+                introVisible = entries[0].isIntersecting;
+                update();
+            }, { threshold: 0 }).observe(introSection);
+
+            // Update floating header on resize
+            window.addEventListener('resize', update);
+        }
+
+        // The tree walks along the top of the photo, hops onto the first line of text, walks to the end
+        // of that line, then comes back. Everything is measured from the page so it keeps a steady pace
+        // whatever the font or window size. When the text sits below the photo (phones) it just patrols the photo.
+        function initTree() {
+            const tree = document.querySelector('.critter');
+            const jump = tree.querySelector('.critter-jump');
+            const pupils = tree.querySelector('.critter-pupils');
+            const photo = document.querySelector('.intro-photo img');
+            const firstPara = document.querySelector('.intro-text p');
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            const SPEED = 40;        // walking pace, px per second
+            const HOP_MS = 550;
+            const HOP_HEIGHT = 14;   // px above the higher of the two ledges
+            const PAUSE_MS = 900;
+            let running = [];
+
+            // Left edge, right edge and top of the capital letters of the first line of text
+            function firstLine() {
+                const range = document.createRange();
+                range.selectNodeContents(firstPara);
+                const rects = Array.from(range.getClientRects()).filter(r => r.width > 1);
+                const top = Math.min(...rects.map(r => r.top));
+                const line = rects.filter(r => r.top - top < r.height / 2);
+                const style = getComputedStyle(firstPara);
+                let capOffset = 0.2 * parseFloat(style.fontSize);
+                const ctx = document.createElement('canvas').getContext('2d');
+                ctx.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+                const m = ctx.measureText('I');
+                if (m.fontBoundingBoxAscent) capOffset = m.fontBoundingBoxAscent - m.actualBoundingBoxAscent;
+                return {
+                    left: Math.min(...line.map(r => r.left)),
+                    right: Math.max(...line.map(r => r.right)),
+                    capTop: top + capOffset
+                };
+            }
+
+            function build() {
+                running.forEach(a => a.cancel());
+                running = [];
+                if (reducedMotion.matches || !tree.animate) return;
+
+                // Waypoints, relative to the tree's resting spot on the photo's top-left corner
+                const w = tree.getBoundingClientRect().width;
+                const p = photo.getBoundingClientRect();
+                const line = firstLine();
+                const path = [{ x: 0, y: 0 }, { x: p.width - w, y: 0 }];
+                if (line.left >= p.right && line.capTop < p.bottom) {
+                    const y = line.capTop - p.top;
+                    path.push({ x: line.left - p.left, y: y, hop: true });
+                    path.push({ x: line.right - p.left - w, y: y });
+                }
+
+                // There and back again, pausing at each end
+                const legs = [];
+                for (let i = 1; i < path.length; i++) legs.push({ from: path[i - 1], to: path[i], hop: path[i].hop });
+                const back = legs.map(l => ({ from: l.to, to: l.from, hop: l.hop })).reverse();
+                const end = path[path.length - 1];
+                const trip = legs.concat({ from: end, to: end, pause: true }, back, { from: path[0], to: path[0], pause: true });
+                trip.forEach(l => {
+                    l.ms = l.pause ? PAUSE_MS : l.hop ? HOP_MS : Math.abs(l.to.x - l.from.x) / SPEED * 1000;
+                });
+                const total = trip.reduce((sum, l) => sum + l.ms, 0);
+
+                const xFrames = [], yFrames = [], eyeFrames = [];
+                let t = 0, heading = 1;
+                trip.forEach(l => {
+                    const at = t / total;
+                    xFrames.push({ offset: at, transform: `translateX(${l.from.x}px)` });
+                    yFrames.push({ offset: at, transform: `translateY(${l.from.y}px)`, easing: l.hop ? 'ease-out' : 'linear' });
+                    if (l.hop) {
+                        const apex = Math.min(l.from.y, l.to.y) - HOP_HEIGHT;
+                        yFrames.push({ offset: (t + l.ms / 2) / total, transform: `translateY(${apex}px)`, easing: 'ease-in' });
+                    }
+                    // Eyes look where it is heading, turning round during each pause
+                    eyeFrames.push({ offset: at, transform: `translateX(${0.75 * heading}px)` });
+                    if (l.pause) heading = -heading;
+                    t += l.ms;
+                });
+                xFrames.push({ offset: 1, transform: 'translateX(0px)' });
+                yFrames.push({ offset: 1, transform: 'translateY(0px)' });
+                eyeFrames.push({ offset: 1, transform: 'translateX(0.75px)' });
+
+                const timing = { duration: total, iterations: Infinity };
+                running = [tree.animate(xFrames, timing), jump.animate(yFrames, timing), pupils.animate(eyeFrames, timing)];
+            }
+
+            // Re-measure when the layout can change
+            let resizeTimer;
+            window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(build, 150); });
+            window.addEventListener('load', build);
+            if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
+            reducedMotion.addEventListener && reducedMotion.addEventListener('change', build);
+            build();
+        }
+
+        document.addEventListener('DOMContentLoaded', initFloatingHeader);
+        document.addEventListener('DOMContentLoaded', initTree);
+    </script>
+
+    <!-- Selected Publications: switched off until the entries below are reviewed.
+         To enable, delete the two marker lines "PUBLICATIONS-OFF" (the opening one just below and the closing one after the last card).
+         Note: HTML comments can't nest, so don't add comments or a double hyphen inside the block while it is off. -->
+    <!-- PUBLICATIONS-OFF
+    <div class="container">
+        <a name="publications"></a>
+        <h2 class="display-7 mb-2 text-center">Selected Publications</h2>
+        <p class="text-center">Please visit <a target="_blank" href="https://scholar.google.com/citations?hl=en&user=tc0M7WwAAAAJ&view_op=list_works&sortby=pubdate">my google scholar</a> for the full list of publications</p>
+        <br>
+        <div class="card-deck mb-3">
+            <div class="card mb-2 shadow-sm">
+                <div class="card-body p-2 d-flex flex-wrap">
+                    <div class="teaser order-1 p-2 bd-highlight">
+                        <a target="_blank" href="https://arxiv.org/abs/2604.14363">
+                            <img src="media/papers/lang_cost_tccd/lang_cost_tccd_teaser.png" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="p-2 order-2 bd-highlight paper">
+                        <h4 class="my-0 mb-2 font-weight-normal">The Cost of Language: Centroid Erasure Exposes and Exploits Modal Competition in Multimodal Language Models</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><b>Akshay Paruchuri</b>, Ishan Chatterjee, Henry Fuchs, Ehsan Adeli and Piotr Didyk</li>
+                            <li><i>arXiv 2026</i></li>
+                            <li class="mt-2"><a target="_blank" href="https://arxiv.org/abs/2604.14363">paper</a> | <a target="_blank" href="media/papers/lang_cost_tccd/lang_cost_tccd_bib.txt">bibtex</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck mb-3">
+            <div class="card mb-2 shadow-sm">
+                <div class="card-body p-2 d-flex flex-wrap">
+                    <div class="teaser order-1 p-2 bd-highlight">
+                        <a target="_blank" href="https://www.arxiv.org/abs/2508.20148">
+                            <img src="media/papers/phiat/phiat_teaser.png" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="p-2 order-2 bd-highlight paper">
+                        <h4 class="my-0 mb-2 font-weight-normal">The Anatomy of a Personal Health Agent</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li>A. Ali Heydari*, Ken Gu*, Vidya Srinivas*, Hong Yu*, Zhihan Zhang, Yuwei Zhang, <b>Akshay Paruchuri</b>, Qian He, Hamid Palangi, Nova Hammerquist, Ahmed A. Metwally, Brent Winslow, Yubin Kim, Kumar Ayush, Yuzhe Yang, Girish Narayanswamy, Maxwell A. Xu, Jake Garrison, Amy Aremnto Lee, Jenny Vafeiadou, Ben Graef, Isaac R. Galatzer-Levy, Erik Schenck, Andrew Barakat, Javier Perez, Jacqueline Shreibati, John Hernandez, Anthony Z. Faranesh, Javier L. Prieto, Connor Heneghan, Yun Liu, Jiening Zhan, Mark Malhotra, Shwetak Patel, Tim Althoff, Xin Liu&dagger;, Daniel McDuff&dagger; and Xuhai "Orson" Xu&dagger;</li>
+                            <li><i>arXiv 2025</i></li>
+                            <li class="mt-2"><a target="_blank" href="https://www.arxiv.org/abs/2508.20148">paper</a> | <a target="_blank" href="https://research.google/blog/how-we-are-building-the-personal-health-coach/">blog post</a> | <a target="_blank" href="media/papers/phiat/phiat_bib.txt">bibtex</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck mb-3">
+            <div class="card mb-2 shadow-sm">
+                <div class="card-body p-2 d-flex flex-wrap">
+                    <div class="teaser order-1 p-2 bd-highlight">
+                        <a target="_blank" href="https://arxiv.org/abs/2506.21532">
+                            <img src="media/papers/healthchat/healthchat_teaser.png" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="p-2 order-2 bd-highlight paper">
+                        <h4 class="my-0 mb-2 font-weight-normal">"What's Up, Doc?": Analyzing How Users Seek Health Information in Large-Scale Conversational AI Datasets</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><b>Akshay Paruchuri</b>, Maryam Aziz, Rohit Vartak, Ayman Ali, Best Uchehara, Xin Liu, Ishan Chatterjee and Monica Agrawal</li>
+                            <li><i>EMNLP 2025 (Findings)</i></li>
+                            <li class="mt-2"><a target="_blank" href="https://arxiv.org/abs/2506.21532">paper</a> | <a target="_blank" href="https://huggingface.co/datasets/yahskapar/HealthChat-11K">dataset</a> | <a target="_blank" href="https://github.com/yahskapar/HealthChat">code</a> | <a target="_blank" href="media/papers/healthchat/healthchat_bib.txt">bibtex</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck mb-3">
+            <div class="card mb-2 shadow-sm">
+                <div class="card-body p-2 d-flex flex-wrap">
+                    <div class="teaser order-1 p-2 bd-highlight">
+                        <a target="_blank" href="https://arxiv.org/abs/2506.08249">
+                            <img src="media/papers/radar/radar_teaser.png" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="p-2 order-2 bd-highlight paper">
+                        <h4 class="my-0 mb-2 font-weight-normal">RADAR: Benchmarking Language Models on Imperfect Tabular Data</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li>Ken Gu, Zhihan Zhang, Kate Lin, Yuwei Zhang, <b>Akshay Paruchuri</b>, Hong Yu, Mehran Kazemi, Kumar Ayush, A. Ali Heydari, Maxwell A. Xu, Yun Liu, Ming-Zher Poh, Yuzhe Yang, Mark Malhotra, Shwetak Patel, Hamid Palangi, Xuhai Xu, Daniel McDuff, Tim Althoff and Xin Liu</li>
+                            <li><i>NeurIPS 2025</i></li>
+                            <li class="mt-2"><a target="_blank" href="https://arxiv.org/abs/2506.08249">paper</a> | <a target="_blank" href="https://huggingface.co/datasets/kenqgu/RADAR">dataset</a> | <a target="_blank" href="https://github.com/kenqgu/RADAR">code</a> | <a target="_blank" href="media/papers/radar/radar_bib.txt">bibtex</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck mb-3">
+            <div class="card mb-2 shadow-sm">
+                <div class="card-body p-2 d-flex flex-wrap">
+                    <div class="teaser order-1 p-2 bd-highlight">
+                        <a target="_blank" href="https://egotrigger.github.io/">
+                            <img src="media/papers/egotrigger/egotrigger_teaser.png" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="p-2 order-2 bd-highlight paper">
+                        <h4 class="my-0 mb-2 font-weight-normal">EgoTrigger: Toward Audio-Driven Image Capture for Human Memory Enhancement in All-Day Energy-Efficient Smart Glasses</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><b>Akshay Paruchuri</b>, Sinan Hersek, Lavisha Aggarwal, Qiao Yang, Xin Liu, Achin Kulshrestha, Andrea Colaco, Henry Fuchs and Ishan Chatterjee</li>
+                            <li><i>ISMAR 2025 (TVCG Journal Paper)</i></li>
+                            <li class="mt-2"><a target="_blank" href="https://egotrigger.github.io/">project page</a> | <a target="_blank" href="https://arxiv.org/abs/2508.01915">paper</a> | <a target="_blank" href="https://github.com/yahskapar/EgoTrigger">code</a> | <a target="_blank" href="media/papers/egotrigger/egotrigger_bib.txt">bibtex</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck mb-3">
+            <div class="card mb-2 shadow-sm">
+                <div class="card-body p-2 d-flex flex-wrap">
+                    <div class="teaser order-1 p-2 bd-highlight">
+                        <a target="_blank" href="https://arxiv.org/pdf/2406.12830">
+                            <img src="media/papers/prob_reasoning_in_LLMs/prob_reasoning_in_LLMs.png" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="p-2 order-2 bd-highlight paper">
+                        <h4 class="my-0 mb-2 font-weight-normal">What Are the Odds? Language Models Are Capable of Probabilistic Reasoning</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><b>Akshay Paruchuri</b>, Jake Garrison, Shun Liao, John Hernandez, Jacob Sunshine, Tim Althoff, Xin Liu and Daniel McDuff</li>
+                            <li><i>EMNLP 2024 (Main)</i></li>
+                            <li class="mt-2"><a target="_blank" href="https://arxiv.org/pdf/2406.12830">paper</a> | <a target="_blank" href="https://github.com/yahskapar/LLMs-and-Probabilistic-Reasoning">code</a> | <a target="_blank" href="https://research.google/blog/evaluating-and-enhancing-probabilistic-reasoning-in-language-models/">blog post</a> | <a target="_blank" href="media/papers/prob_reasoning_in_LLMs/prob_reasoning_in_LLMs_bib.txt">bibtex</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck mb-3">
+            <div class="card mb-2 shadow-sm">
+                <div class="card-body p-2 d-flex flex-wrap">
+                    <div class="teaser order-1 p-2 bd-highlight">
+                        <a target="_blank" href="https://arxiv.org/abs/2406.06464">
+                            <img src="media/papers/phia/phia_teaser.png" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="p-2 order-2 bd-highlight paper">
+                        <h4 class="my-0 mb-2 font-weight-normal">Transforming Wearable Data into Health Insights using Large Language Model Agents</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><b>Akshay Paruchuri*</b>, Mike A. Merrill*, Naghmeh Rezaei, Geza Kovacs, Javier Perez, Yun Liu, Erik Schenck, Nova Hammerquist, Jake Sunshine, Shyam Tailor, Kumar Ayush, Hao-Wei Su, Qian He, Cory Y. McLean, Mark Malhotra, Shwetak Patel, Jiening Zhan, Tim Althoff, Daniel McDuff and Xin Liu</li>
+                            <li><i>Nature Communications 2026</i></li>
+                            <li class="mt-2"><a target="_blank" href="https://arxiv.org/abs/2406.06464">paper</a> | <a target="_blank" href="https://www.nature.com/articles/s41467-025-67922-y">nature</a> | <a target="_blank" href="https://github.com/yahskapar/personal-health-insights-agent">code</a> | <a target="_blank" href="https://research.google/blog/advancing-personal-health-and-wellness-insights-with-ai/">blog post</a> | <a target="_blank" href="media/papers/phia/phia_bib.txt">bibtex</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck mb-3">
+            <div class="card mb-2 shadow-sm">
+                <div class="card-body p-2 d-flex flex-wrap">
+                    <div class="teaser order-1 p-2 bd-highlight">
+                        <a target="_blank" href="https://arxiv.org/abs/2408.10153">
+                            <img src="media/papers/colon_image_translation/colon_image_translation_teaser.png" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="p-2 order-2 bd-highlight paper">
+                        <h4 class="my-0 mb-2 font-weight-normal">Structure-preserving Image Translation for Depth Estimation in Colonoscopy Video</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li>Shuxian Wang, <b>Akshay Paruchuri</b>, Zhaoxi Zhang, Sarah McGill and Roni Sengupta</li>
+                            <li><i>MICCAI 2024 <span class="achievement">[Oral]</span></i></li>
+                            <li class="mt-2"><a target="_blank" href="https://arxiv.org/abs/2408.10153">paper</a> | <a target="_blank" href="media/papers/colon_image_translation/colon_image_translation_bib.txt">bibtex</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck mb-3">
+            <div class="card mb-2 shadow-sm">
+                <div class="card-body p-2 d-flex flex-wrap">
+                    <div class="teaser order-1 p-2 bd-highlight">
+                        <a target="_blank" href="https://ppsnet.github.io/">
+                            <img src="media/papers/ppsnet/ppsnet_teaser.png" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="p-2 order-2 bd-highlight paper">
+                        <h4 class="my-0 mb-2 font-weight-normal">Leveraging Near-Field Lighting for Monocular Depth Estimation from Endoscopy Videos</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><b>Akshay Paruchuri</b>, Samuel Ehrenstein, Shuxian Wang, Inbar Fried, Stephen M. Pizer, Marc Niethammer and Roni Sengupta</li>
+                            <li><i>ECCV 2024</i></li>
+                            <li class="mt-2"><a target="_blank" href="https://ppsnet.github.io/">project page</a> | <a target="_blank" href="https://arxiv.org/abs/2403.17915">paper</a> | <a target="_blank" href="https://github.com/yahskapar/PPSNet">code</a> | <a target="_blank" href="media/papers/ppsnet/ppsnet_bib.txt">bibtex</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck mb-3">
+            <div class="card mb-2 shadow-sm">
+                <div class="card-body p-2 d-flex flex-wrap">
+                    <div class="teaser order-1 p-2 bd-highlight">
+                        <a target="_blank" href="https://motion-matters.github.io/">
+                            <img src="media/papers/marppg/marppg_teaser.png" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="p-2 order-2 bd-highlight paper">
+                        <h4 class="my-0 mb-2 font-weight-normal">Motion Matters: Neural Motion Transfer for Better Camera Physiological Measurement</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><b>Akshay Paruchuri</b>, Xin Liu, Yulu Pan, Shwetak Patel, Daniel McDuff and Roni Sengupta</li>
+                            <li><i>WACV 2024 <span class="achievement">[Oral]</span></i></li>
+                            <li class="mt-2"><a target="_blank" href="https://motion-matters.github.io/">project page</a> | <a target="_blank" href="https://arxiv.org/abs/2303.12059">paper</a> | <a target="_blank" href="https://github.com/yahskapar/MA-rPPG-Video-Toolbox">code</a> | <a target="_blank" href="media/papers/marppg/marppg_bib.txt">bibtex</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck mb-3">
+            <div class="card mb-2 shadow-sm">
+                <div class="card-body p-2 d-flex flex-wrap">
+                    <div class="teaser order-1 p-2 bd-highlight">
+                        <a target="_blank" href="media/papers/ego_collab_recon/zhang2023reconstruction.pdf">
+                            <img src="media/papers/ego_collab_recon/ego_collab_recon_teaser.png" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="p-2 order-2 bd-highlight paper">
+                        <h4 class="my-0 mb-2 font-weight-normal">Reconstruction of Human Body Pose and Appearance Using Body-Worn IMUs and a Nearby Camera View for Collaborative Egocentric Telepresence</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li>Qian Zhang, <b>Akshay Paruchuri</b>, Young-Woon Cha, Jia-Bin Huang, Jade Kandel, Howard Jiang, Adrian Ilie, Andrei State, Danielle Szafir, Daniel Szafir and Henry Fuchs</li>
+                            <li><i>IEEE VR 2023 (ReDigiTS Workshop)</i></li>
+                            <li class="mt-2"><a target="_blank" href="media/papers/ego_collab_recon/zhang2023reconstruction.pdf">paper</a> | <a target="_blank" href="media/papers/ego_collab_recon/ego_collab_recon_bib.txt">bibtex</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck mb-3">
+            <div class="card mb-2 shadow-sm">
+                <div class="card-body p-2 d-flex flex-wrap">
+                    <div class="teaser order-1 p-2 bd-highlight">
+                        <a target="_blank" href="media/papers/drone_brush/2022angelopoulosdrone.pdf">
+                            <img src="media/papers/drone_brush/drone_brush_teaser.jpg" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="p-2 order-2 bd-highlight paper">
+                        <h4 class="my-0 mb-2 font-weight-normal">Drone Brush: Mixed Reality Drone Path Planning</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li>Angelos Angelopoulos, Austin Hale, Husam Shaik, <b>Akshay Paruchuri</b>, Ken Liu, Randal Tuggle and Daniel Szafir</li>
+                            <li><i>HRI 2022</i></li>
+                            <li class="mt-2"><a target="_blank" href="media/papers/drone_brush/2022angelopoulosdrone.pdf">paper</a> | <a target="_blank" href="media/papers/drone_brush/drone_brush_bib.txt">bibtex</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck mb-3">
+            <div class="card mb-2 shadow-sm">
+                <div class="card-body p-2 d-flex flex-wrap">
+                    <div class="teaser order-1 p-2 bd-highlight">
+                        <a target="_blank" href="https://arxiv.org/abs/2210.00716">
+                            <img src="media/software/rppg-toolbox/rppg_toolbox_teaser.png" alt="" width="100%">
+                        </a>
+                    </div>
+                    <div class="p-2 order-2 bd-highlight paper">
+                        <h4 class="my-0 mb-2 font-weight-normal">rPPG-Toolbox: Deep Remote PPG Toolbox</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li>Xin Liu, Girish Narayanswamy, <b>Akshay Paruchuri</b>, Xiaoyu Zhang, Jiankai Tang, Yuzhe Zhang, Roni Sengupta, Shwetak Patel, Yuntao Wang and Daniel McDuff</li>
+                            <li><i>NeurIPS 2023</i></li>
+                            <li class="mt-2"><a target="_blank" href="https://arxiv.org/abs/2210.00716">paper</a> | <a target="_blank" href="https://github.com/ubicomplab/rPPG-Toolbox">code</a> | <a target="_blank" href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/d7d0d548a6317407e02230f15ce75817-Abstract-Datasets_and_Benchmarks.html">proceedings</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    PUBLICATIONS-OFF -->
 
-    
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  </body>
-    
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <footer>
-    <div class="row">
-      <div class="col-12">
-        <p class="text-center">Website design originally by <a href="https://nmwsharp.com/">Nicholas Sharp</a>. Check out his work!</p>
-        <br>
-        <br>
-        <br>
-        <br>
-      </div>
-    </div>
-  </footer>
-
+    <!-- Layout adapted from Yossi Gandelsman's homepage (https://yossigandelsman.github.io/); palette and theming are my own. -->
+</body>
 
 </html>
