@@ -154,9 +154,8 @@ a:hover {
   margin: 2.25rem 0 1.25rem;
 }
 
-/* When the text is taller than the photo, the photo stretches to match it; the insets
-   line its frame up with the first line's capitals and the last line's baseline.
-   When the text is shorter, it is centred against the photo instead. */
+/* The text starts level with the top of the photo; the insets line the photo's frame up with
+   the first line's capitals. When the text is taller than the photo, the photo stretches to match. */
 .intro-photo {
   position: relative;
   min-height: 240px;
@@ -173,7 +172,7 @@ a:hover {
 }
 
 .intro-text {
-  align-self: center;
+  align-self: start;
   line-height: 1.6;
 }
 
