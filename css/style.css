@@ -154,8 +154,8 @@ a:hover {
   margin: 2.25rem 0 1.25rem;
 }
 
-/* The text starts level with the top of the photo; the insets line the photo's frame up with
-   the first line's capitals. When the text is taller than the photo, the photo stretches to match. */
+/* The text column (bio + icons) is centred against the photo. When it is taller than the photo,
+   the photo stretches to match; the insets line its frame up with the first line's capitals. */
 .intro-photo {
   position: relative;
   min-height: 240px;
@@ -172,7 +172,7 @@ a:hover {
 }
 
 .intro-text {
-  align-self: start;
+  align-self: center;
   line-height: 1.6;
 }
 
