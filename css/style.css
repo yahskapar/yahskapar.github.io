@@ -166,7 +166,7 @@ a:hover {
   top: 0.45rem;
   left: 0;
   width: 100%;
-  height: calc(100% - 0.95rem);
+  height: calc(100% - 0.85rem);
   object-fit: cover;
   object-position: 50% 35%;
 }
@@ -174,9 +174,6 @@ a:hover {
 .intro-text {
   align-self: center;
   line-height: 1.6;
-  /* Nudges the block down a little: the paragraph is the visually heavy part, so without this
-     the text and icons read as sitting slightly high against the photo. */
-  padding-top: 0.6rem;
 }
 
 .intro-text p:last-child {
@@ -350,10 +347,6 @@ i.far:hover, i.ai:hover, i.fab:hover {
   .intro-photo img {
     top: 0;
     height: 100%;
-  }
-
-  .intro-text {
-    padding-top: 0;
   }
 
   .critter {
